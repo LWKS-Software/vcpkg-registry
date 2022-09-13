@@ -3,6 +3,14 @@
     "cineform-sdk": {
       "baseline": "1.0.0",
       "port-version": 0
+    },
+    "aaf": {
+      "baseline": "1.0.0",
+      "port-version": 0
+    },
+    "aja": {
+      "baseline": "1.0.0",
+      "port-version": 0
     }
   }
 }

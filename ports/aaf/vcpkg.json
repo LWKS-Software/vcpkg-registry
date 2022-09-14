@@ -3,5 +3,11 @@
   "name": "aaf",
   "version": "1.0.0",
   "description": "LWKS Software fork of AAF",
-  "homepage": "git@github.com:LWKS-Software/AAF.git"
+  "homepage": "git@github.com:LWKS-Software/AAF.git",
+  "dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    }
+  ]
 }

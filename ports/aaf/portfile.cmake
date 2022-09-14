@@ -6,9 +6,19 @@ vcpkg_from_github(
   HEAD_REF main
 )
 
-vcpkg_configure_cmake(
+if(VCPKG_TARGET_IS_WINDOWS)
+	set(AAF_OPTIONS,"-DPLATFORM=VC17 -DARCH=x64")
+	set(AAF_GENERATOR,"Visual Studio 17 2022")
+elseif(VCPKG_TARGET_IS_LINUX)
+	set(AAF_OPTIONS,"-DPLATFORM=gcc48 -DARCH=x86_64")
+else()
+	set(AAF_OPTIONS,"-DPLATFORM=clang7 -DARCH=x86_64")
+endif()
+
+vcpkg_cmake_configure(
   SOURCE_PATH "${SOURCE_PATH}"
-  PREFER_NINJA
+  OPTIONS ${AAF_OPTIONS}
+  GENERATOR ${GENERATOR}
 )
 
 vcpkg_install_cmake()

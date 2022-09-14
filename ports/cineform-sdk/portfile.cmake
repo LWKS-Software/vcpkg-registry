@@ -6,13 +6,15 @@ vcpkg_from_github(
   HEAD_REF main
 )
 
-vcpkg_configure_cmake(
+vcpkg_cmake_configure(
   SOURCE_PATH "${SOURCE_PATH}"
-  PREFER_NINJA
   OPTIONS -DBUILD_STATIC=OFF -DBUILD_SEPARATED=ON -DBUILD_TOOLS=OFF
 )
 vcpkg_install_cmake()
 vcpkg_fixup_cmake_targets()
+
+file(REMOVE "${CURRENT_PACKAGES_DIR}/debug/*.dll")
+file(REMOVE "${CURRENT_PACKAGES_DIR}/debug/lib/*.dll")
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 

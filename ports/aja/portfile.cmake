@@ -13,8 +13,6 @@ vcpkg_cmake_configure(
 vcpkg_install_cmake()
 vcpkg_fixup_cmake_targets()
 
--DAJA_BUILD_APPS=NO -DAJA_BUILD_DRIVER=NO -DAJA_BUILD_QT_BASED=NO 
-
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
 file(

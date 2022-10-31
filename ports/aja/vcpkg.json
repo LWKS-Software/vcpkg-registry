@@ -1,9 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg/master/scripts/vcpkg.schema.json",
   "name": "aja",
-  "version": "1.0.2",
+  "version": "16.2.0",
+  "port-version": 1,
   "description": "ntv2 AJA SDK",
-  "homepage": "git@github.com:aja-video/ntv2.git",
+  "homepage": "https://github.com/LWKS-Software/ntv2.git",
   "dependencies": [
     {
       "name": "vcpkg-cmake",

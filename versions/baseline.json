@@ -9,8 +9,8 @@
       "port-version": 0
     },
     "aja": {
-      "baseline": "1.0.2",
-      "port-version": 0
+      "baseline": "16.2.0",
+      "port-version": 1
     }
   }
 }

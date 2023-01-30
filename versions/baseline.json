@@ -1,7 +1,7 @@
 {
   "default": {
     "cineform-sdk": {
-      "baseline": "1.0.0",
+      "baseline": "10.0.0",
       "port-version": 0
     },
     "aaf": {

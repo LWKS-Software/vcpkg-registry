@@ -11,6 +11,10 @@ vcpkg_cmake_configure(
   OPTIONS -DAJA_BUILD_APPS=NO -DAJA_BUILD_DRIVER=NO -DAJA_BUILD_QT_BASED=NO
 )
 vcpkg_install_cmake()
+
+message(STATUS "making folders in: \"${CURRENT_PACKAGES_DIR}\"")
+file(MAKE_DIRECTORY "${CURRENT_PACKAGES_DIR}/debug/share/${PORT}")
+
 vcpkg_fixup_cmake_targets()
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")

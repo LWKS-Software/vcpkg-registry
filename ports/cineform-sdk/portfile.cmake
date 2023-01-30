@@ -11,10 +11,22 @@ vcpkg_cmake_configure(
   OPTIONS -DBUILD_STATIC=OFF -DBUILD_SEPARATED=ON -DBUILD_TOOLS=OFF
 )
 vcpkg_install_cmake()
-vcpkg_fixup_cmake_targets()
 
+# make 'vcpkg/packages/cineform-sdk_x64-windows/debug/share/cineform-sdk'
+message(STATUS "making folders in: \"${CURRENT_PACKAGES_DIR}\"")
+file(MAKE_DIRECTORY "${CURRENT_PACKAGES_DIR}/share/${PORT}")
+file(MAKE_DIRECTORY "${CURRENT_PACKAGES_DIR}/debug/share/${PORT}")
+
+# remove vcpkg/packages/cineform-sdk_x64-windows/debug/lib/CFHDDecoder.dll
+message(STATUS "run remove files in: \"${CURRENT_PACKAGES_DIR}\"")
+file(REMOVE "${CURRENT_PACKAGES_DIR}/*.dll")
+file(REMOVE "${CURRENT_PACKAGES_DIR}/lib/*.dll")
 file(REMOVE "${CURRENT_PACKAGES_DIR}/debug/*.dll")
 file(REMOVE "${CURRENT_PACKAGES_DIR}/debug/lib/*.dll")
+
+# needs 'vcpkg/packages/cineform-sdk_x64-windows/debug/share/cineform-sdk'
+message(STATUS "run vcpkg_fixup_cmake_targets")
+vcpkg_fixup_cmake_targets()
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 

@@ -1,2 +1,2 @@
 # vcpkg-registry
-registry for private lightworks packages
+registry for lightworks packages
